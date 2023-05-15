@@ -1,0 +1,26 @@
+{
+  "name": "cassidyaskedme",
+  "version": "1.0.0",
+  "description": "A collection of answers to the interview questions stated in Cassidy Williams' newsletter.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hugekontrast/cassidyAskedMe.git"
+  },
+  "keywords": [
+    "interview",
+    "questions"
+  ],
+  "author": "Ashish Khare",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hugekontrast/cassidyAskedMe/issues"
+  },
+  "homepage": "https://github.com/hugekontrast/cassidyAskedMe#readme",
+  "devDependencies": {
+    "typescript": "^5.0.4"
+  }
+}

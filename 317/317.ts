@@ -15,19 +15,19 @@
  * @param {number[]} nums
  * @param {number} num
  * @returns {void}
-*/
+ */
 function insertAtPos(nums: number[], num: number): void {
-	if(nums.length < 1){
+	if (nums.length < 1) {
 		nums.push(num);
 	} else {
 		let index = nums.length - 1;
-		while(index > -1){
-			if(num > nums[index]){
+		while (index > -1) {
+			if (num > nums[index]) {
 				break;
 			}
 			index -= 1;
 		}
-		nums.splice(index+1, 0, num);
+		nums.splice(index + 1, 0, num);
 	}
 }
 
@@ -36,7 +36,8 @@ function insertAtPos(nums: number[], num: number): void {
  * @return {[array, array]}
  */
 function separateAndSort(nums: number[]): [number[], number[]] {
-	let even: number[] = [], odd: number[] = [];
+	let even: number[] = [],
+		odd: number[] = [];
 	for (let num of nums) {
 		if (num === 0) {
 			continue;
@@ -61,25 +62,30 @@ function separateAndSort(nums: number[]): [number[], number[]] {
 	];
 	let results: Array<[Array<number>, Array<number>]> = [
 		[
-			[2, 4, 6],
+			[2, 4, 8],
 			[1, 3, 5, 7, 9],
 		],
 		[[], [1, 1, 1, 1]],
 	];
-
 	// for each input respective output is produced
 	inputs.forEach((value: Array<number>, index: number) => {
-		let nums: Array<number> = value;
-		let ans: [Array<number>, Array<number>] = separateAndSort(nums);
-		console.log(ans);
-		// let result: Array<[Array<number>, Array<number>]> = results[index];
-		// let test: boolean =
-		// 	ans.length === result.length &&
-		// 	ans.every((value, index) => value === result[index]);
-		// console.log(
-		// 	test
-		// 		? `✅ Test no. ${index + 1}: Passed`
-		// 		: `❌ Test no. ${index + 1}: Failed`,
-		// );
+		console.log(`Running test for: [${value}]`);
+
+		let [left, right]: [Array<number>, Array<number>] =
+			separateAndSort(value);
+		let result: [Array<number>, Array<number>] = results[index];
+
+		let test: boolean =
+			left.length === result[0].length &&
+			right.length === result[1].length &&
+			left.every((value, index) => value === result[0][index]) &&
+			right.every((value, index) => value === result[1][index]);
+
+		console.log(
+			test
+				? `✅ Test no. ${index + 1}: Passed`
+				: `❌ Test no. ${index + 1}: Failed`,
+			"\n",
+		);
 	});
 })();

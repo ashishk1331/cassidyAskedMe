@@ -1,0 +1,26 @@
+# [Todo] Boyer-Moore Voting Algorithm 
+
+import collections
+
+def majority(array):
+    dmap = collections.defaultdict(lambda:0)
+
+    for each in array:
+        dmap[each] += 1
+
+    que = sorted(dmap.items(), key=lambda x: x[1], reverse=True)
+
+    return que
+
+def main():
+    arrays =[
+            [3, 1, 4, 1],
+            [33, 44, 55, 66, 77],
+            [1, 2, 3, 4],
+        ]
+
+    for each in arrays:
+        print(majority(each))
+
+if __name__ == "__main__":
+    main()

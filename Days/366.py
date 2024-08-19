@@ -24,6 +24,7 @@ def calculateExecutionTimes(events):
 
 
 def main():
+    # Test Case 1: Nested Functions with Overlapping Times
     tasks = [
         {"name": "main", "time": 0, "event": "start"},
         {"name": "subTask1", "time": 5, "event": "start"},
@@ -34,12 +35,14 @@ def main():
     ]
     assert calculateExecutionTimes(tasks) == {"main": 25, "subTask1": 5, "subTask2": 5}
 
+    # Test Case 2: Single Function with No Subtasks
     tasks = [
         {"name": "main", "time": 0, "event": "start"},
         {"name": "main", "time": 10, "event": "end"},
     ]
     assert calculateExecutionTimes(tasks) == {"main": 10}
 
+    # Test Case 3: Multiple Functions with Overlapping Times
     tasks = [
         {"name": "main", "time": 0, "event": "start"},
         {"name": "subTask1", "time": 2, "event": "start"},
@@ -50,6 +53,7 @@ def main():
     ]
     assert calculateExecutionTimes(tasks) == {"main": 10, "subTask1": 3, "subTask2": 2}
 
+    # Test Case 4: Nested Subtasks
     tasks = [
         {"name": "main", "time": 0, "event": "start"},
         {"name": "subTask1", "time": 2, "event": "start"},
@@ -60,6 +64,7 @@ def main():
     ]
     assert calculateExecutionTimes(tasks) == {"main": 10, "subTask1": 6, "subTask2": 3}
 
+    # Test Case 5: Multiple Functions with No Overlap
     tasks = [
         {"name": "main", "time": 0, "event": "start"},
         {"name": "main", "time": 3, "event": "end"},
@@ -70,6 +75,7 @@ def main():
     ]
     assert calculateExecutionTimes(tasks) == {"main": 3, "subTask1": 3, "subTask2": 3}
 
+    # Test Case 6: Function Ends Before Another Starts
     tasks = [
         {"name": "main", "time": 0, "event": "start"},
         {"name": "main", "time": 3, "event": "end"},
@@ -78,6 +84,7 @@ def main():
     ]
     assert calculateExecutionTimes(tasks) == {"main": 3, "subTask1": 3}
 
+    # Test Case 7: Functions with Same Start and End Time
     tasks = [
         {"name": "main", "time": 0, "event": "start"},
         {"name": "main", "time": 0, "event": "end"},

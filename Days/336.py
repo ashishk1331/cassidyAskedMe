@@ -43,7 +43,7 @@ class Node:
 
     def printTree(self):
         height = self.depth()
-        width = 2*(height + (height - 1)) - 1
+        width = 2 * (height + (height - 1)) - 1
 
         order = []
         q = deque([self])
@@ -61,18 +61,19 @@ class Node:
             order.append(temp)
 
         order.pop()
-        counter = 2*height - 1
+        counter = 2 * height - 1
 
         for index, each in enumerate(order):
-        	if index > 0:
-        		sep = "/ \\"
-        		separator = " ".join([sep]*index)
-        		print(" "*counter, separator)
-        		counter -= 1
-        	level = (" "*height).join(
-        		map(lambda x: " " if x is None else str(x), each))
-        	print(" "*counter, level)
-        	counter -= 1
+            if index > 0:
+                sep = "/ \\"
+                separator = " ".join([sep] * index)
+                print(" " * counter, separator)
+                counter -= 1
+            level = (" " * height).join(
+                map(lambda x: " " if x is None else str(x), each)
+            )
+            print(" " * counter, level)
+            counter -= 1
 
 
 root = Node(1)

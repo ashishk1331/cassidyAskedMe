@@ -28,7 +28,6 @@ def waysToScore(n, path = []):
 
     return res
 
-
 def main():
     assert waysToScore(5) == 1
     assert waysToScore(12) == 6

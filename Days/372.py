@@ -42,7 +42,27 @@ def main():
 
     # Test case 2: Empty delimiter, should split into individual characters
     assert split(sample, "") == [
-        "T", "h", "i", "s", " ", "i", "s", " ", "s", "o", ",", " ", "s", "o", " ", "s", "i", "l", "l", "y", "!"
+        "T",
+        "h",
+        "i",
+        "s",
+        " ",
+        "i",
+        "s",
+        " ",
+        "s",
+        "o",
+        ",",
+        " ",
+        "s",
+        "o",
+        " ",
+        "s",
+        "i",
+        "l",
+        "l",
+        "y",
+        "!",
     ]
 
     # Test case 3: Comma delimiter, splitting on commas

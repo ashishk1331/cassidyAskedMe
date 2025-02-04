@@ -9,7 +9,8 @@
 
 visited = set()
 
-def waysToScore(n, path = []):
+
+def waysToScore(n, path=[]):
     if n == 0:
         path = tuple(sorted(path))
         if path in visited:
@@ -27,6 +28,7 @@ def waysToScore(n, path = []):
         path.pop()
 
     return res
+
 
 def main():
     assert waysToScore(5) == 1

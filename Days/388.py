@@ -19,10 +19,11 @@ def longestSubsequence(nums):
         count = max(count, temp)
     return count
 
+
 def main():
-    assert longestSubsequence([1,2,3,4,5]) == 5
-    assert longestSubsequence([4,2,3,1,5]) == 2
-    assert longestSubsequence([10,11,7,8,9,12]) == 3
+    assert longestSubsequence([1, 2, 3, 4, 5]) == 5
+    assert longestSubsequence([4, 2, 3, 1, 5]) == 2
+    assert longestSubsequence([10, 11, 7, 8, 9, 12]) == 3
     print("✅ All tests passed.")
 
 
